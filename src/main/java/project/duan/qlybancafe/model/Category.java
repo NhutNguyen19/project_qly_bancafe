@@ -1,7 +1,7 @@
 package project.duan.qlybancafe.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.Table;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -17,6 +17,6 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     String id;
-    String name;
 
+    String name;
 }

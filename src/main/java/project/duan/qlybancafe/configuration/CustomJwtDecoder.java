@@ -1,14 +1,16 @@
 package project.duan.qlybancafe.configuration;
 
-import com.nimbusds.jwt.SignedJWT;
+import java.text.ParseException;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtException;
 import org.springframework.stereotype.Component;
-import project.duan.qlybancafe.service.AuthenticationService;
 
-import java.text.ParseException;
+import com.nimbusds.jwt.SignedJWT;
+
+import project.duan.qlybancafe.service.AuthenticationService;
 
 @Component
 public class CustomJwtDecoder implements JwtDecoder {
@@ -23,7 +25,7 @@ public class CustomJwtDecoder implements JwtDecoder {
     }
 
     public Jwt decode(String token) throws JwtException {
-        try{
+        try {
             SignedJWT signedJWT = SignedJWT.parse(token);
             return new Jwt(
                     token,

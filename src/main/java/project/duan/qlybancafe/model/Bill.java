@@ -1,10 +1,11 @@
 package project.duan.qlybancafe.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -18,6 +19,7 @@ public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     String id;
+
     LocalDateTime checkIn;
     LocalDateTime checkOut;
 

@@ -1,9 +1,9 @@
 package project.duan.qlybancafe.dto.request;
 
 import jakarta.validation.constraints.Size;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
 
 @Data
 @Builder

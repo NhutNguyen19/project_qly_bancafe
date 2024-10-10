@@ -9,5 +9,4 @@ public class ProjectQlyBancafeApplication {
     public static void main(String[] args) {
         SpringApplication.run(ProjectQlyBancafeApplication.class, args);
     }
-
 }

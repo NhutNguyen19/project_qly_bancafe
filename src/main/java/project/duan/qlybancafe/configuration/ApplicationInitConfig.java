@@ -1,23 +1,24 @@
 package project.duan.qlybancafe.configuration;
 
-import lombok.AccessLevel;
-import lombok.RequiredArgsConstructor;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.NonFinal;
-import lombok.extern.slf4j.Slf4j;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.NonFinal;
+import lombok.extern.slf4j.Slf4j;
 import project.duan.qlybancafe.constant.PredefinedRole;
 import project.duan.qlybancafe.model.Account;
 import project.duan.qlybancafe.model.Role;
 import project.duan.qlybancafe.repository.AccountRepository;
 import project.duan.qlybancafe.repository.RoleRepository;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Configuration
 @RequiredArgsConstructor
@@ -37,10 +38,8 @@ public class ApplicationInitConfig {
     @ConditionalOnProperty(
             prefix = "spring.datasource",
             name = "driver-class-name",
-            havingValue = "org.mariadb.jdbc.Driver"
-    )
-    ApplicationRunner applicationRunner(
-            AccountRepository accountRepository, RoleRepository roleRepository) {
+            havingValue = "org.mariadb.jdbc.Driver")
+    ApplicationRunner applicationRunner(AccountRepository accountRepository, RoleRepository roleRepository) {
         log.info("Initializing application");
         return args -> {
             // Check if the admin user already exists

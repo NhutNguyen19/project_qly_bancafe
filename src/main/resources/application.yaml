@@ -17,3 +17,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MariaDBDialect
+jwt:
+  signerKey: "HQLyjPD33KkWH8TfqujcGD5tmn7C3E5mx+dmNNvGZdp8Y5X+OtOgzan7kohj2kSv"
+  valid-duration: 3600
+  refreshable-duration: 36000

@@ -1,6 +1,7 @@
 package project.duan.qlybancafe.model;
 
 import jakarta.persistence.*;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -18,5 +19,4 @@ public class TableFood {
 
     String name;
     String status;
-
 }

@@ -1,6 +1,9 @@
 package project.duan.qlybancafe.model;
 
 import jakarta.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -18,9 +21,11 @@ public class BillInfo {
     String id;
 
     @ManyToOne
+    @JsonBackReference
     Food food;
 
     @ManyToOne
+    @JsonBackReference
     Bill bill;
 
     double count;

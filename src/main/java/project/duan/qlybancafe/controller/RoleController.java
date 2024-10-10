@@ -1,16 +1,17 @@
 package project.duan.qlybancafe.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.*;
+
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.*;
 import project.duan.qlybancafe.dto.ApiResponse;
 import project.duan.qlybancafe.dto.request.RoleRequest;
 import project.duan.qlybancafe.dto.response.RoleResponse;
 import project.duan.qlybancafe.service.RoleService;
-
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -29,7 +30,7 @@ public class RoleController {
     }
 
     @GetMapping()
-    ApiResponse<List<RoleResponse>> getAll(){
+    ApiResponse<List<RoleResponse>> getAll() {
         return ApiResponse.<List<RoleResponse>>builder()
                 .result(roleService.getALl())
                 .message("Successfully retrieved all roles")
